@@ -1,5 +1,4 @@
 import { Application, Router } from "oak";
-import { config } from "dotenv";
 import { addParams } from "add_params";
 import { runShoutrrr } from "./shoutrrr.ts";
 
@@ -10,11 +9,7 @@ interface PostJSONParams {
   params: Record<string, string | number | boolean>;
 }
 
-const port = config().SERVER_PORT
-  ? parseInt(config().SERVER_PORT)
-  : Deno.env.get("SERVER_PORT")
-  ? parseInt(Deno.env.get("SERVER_PORT")!)
-  : 8000;
+const port = Deno.env.get("SERVER_PORT") ? parseInt(Deno.env.get("SERVER_PORT")!) : 8000;
 const app = new Application();
 const router = new Router();
 
