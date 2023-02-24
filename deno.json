@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "strict": true
+  },
+  "fmt": {
+    "options": {
+      "indentWidth": 2,
+      "useTabs": false,
+      "singleQuote": false,
+      "lineWidth": 100,
+      "proseWrap": "preserve"
+    },
+    "files": {
+      "exclude": []
+    }
+  },
+  "lint": {
+    "rules": {
+      "tags": [
+        "recommended"
+      ],
+      "include": [
+        "ban-untagged-todo",
+        "ban-untagged-fixme"
+      ],
+      "exclude": [
+        "no-unused-vars"
+      ]
+    }
+  },
+  "tasks": {
+    "server": "deno run --allow-read --allow-net --allow-env --allow-run --watch server/main.ts"
+  },
+  "imports": {
+    "dotenv": "https://deno.land/x/dotenv@v3.2.2/mod.ts",
+    "oak": "https://deno.land/x/oak@v11.1.0/mod.ts",
+    "add_params": "https://deno.land/x/add_params@v1.2.0/mod.ts"
+  }
+}
