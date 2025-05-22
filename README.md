@@ -55,7 +55,7 @@ curl -X POST \
 
 ### Send a notification
 
-See a list of supported services [here](https://containrrr.dev/shoutrrr/v0.5/services/overview/)
+See a list of supported services [here](https://containrrr.dev/shoutrrr/v0.8/services/overview/)
 
 ```bash
 curl -X POST \

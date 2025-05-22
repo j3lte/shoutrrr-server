@@ -1,5 +1,5 @@
-import { Application, Router } from "oak";
-import { addParams } from "add_params";
+import { Application, Router } from "@oak/oak";
+import { addParams } from "./utils.ts";
 import { runShoutrrr } from "./shoutrrr.ts";
 
 interface PostJSONParams {
@@ -32,7 +32,7 @@ router.get("/", async (ctx) => {
 });
 
 router.post("/", async (ctx) => {
-  const json = (await ctx.request.body()?.value || {}) as Partial<PostJSONParams>;
+  const json = (await ctx.request.body.json()) as Partial<PostJSONParams>;
   const { url, message, title, params } = json;
   if (!url) {
     ctx.response.body = "Missing url, required parameters";
